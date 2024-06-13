@@ -1,0 +1,70 @@
+// Hecktor Dutra Leão - 2412130127
+// Thiago Costa 
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+
+  int nome;
+  printf("Qual o seu nome? ");
+  nome = scanf("%i", &nome);
+  printf("Olá %i\nBem Vindo(a) a Calculadora de IMC !!!\n", nome);
+}
+    int opcao = 3; 
+    while (opcao != 3) {
+    int nome = system("clear");
+    printf("\x1b[32mCALCULADORA DE IMC\n\x1b[0m");
+    printf("1 - Calcular o IMC\n");
+    printf("2 - Sobre o IMC\n");
+    printf("3 - Sair\n");
+    printf("\x1b[31mEscolha uma opção => \x1b[0m");
+    float deu_certo = scanf("%i", &opcao);
+    while (getchar() != '\n')
+      ;
+    if (!deu_certo) {
+      opcao = 0;
+    switch (opcao) {
+    case 1: {
+      float deu_certo = system("clear");
+
+      float peso;
+      float altura;
+
+      printf("Entre com o seu peso em kg: \n");
+      deu_certo = scanf("%f", &peso);
+
+      float peso_eh_valido = peso >= 0.0f && peso <= 300.0f;
+
+      if (peso_eh_valido) {
+
+        printf("Entre com a sua altura em cm: \n");
+        deu_certo = scanf("%f", &altura);
+
+        float altura_eh_valida = altura >= 0.0f && altura <= 300.0f;
+        if (altura_eh_valida) {
+          float imc = peso / (altura * altura);
+          printf("Seu IMC é de %f\n", imc);
+
+          if (imc < 18.5) {
+            printf("Classificação: Abaixo do peso\n");
+          } else if (imc >= 18.5 && imc < 24.9) {
+            printf("Classificação: Peso normal\n");
+          } else if (imc >= 25 && imc < 29.9) {
+            printf("Classificação: Sobrepeso\n");
+          } else {
+            printf("Classificação: Obesidade\n");
+          }
+
+        } else {
+          printf("Valor invalido! Entre com outro valor\n");
+        }
+      } else {
+        printf("Valor invalido! Entre com outro valor\n");
+      }
+    }
+  }    
+
+      return 0; 
+      }  
+  }
